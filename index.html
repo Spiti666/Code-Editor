@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Editor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app" class="app-container">
+    <!-- Main container -->
+    <div id="main-container" class="main-container">
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="toolbar-group">
+          <button id="theme-toggle" class="btn btn-outline">
+            <span id="theme-icon" class="theme-icon">🐭</span>
+          </button>
+          <button id="upload-btn" class="btn btn-outline">
+            <span class="icon">📤</span>
+            Upload
+          </button>
+          <input id="file-upload" type="file" accept=".html,.css,.js" class="hidden">
+          <button id="export-btn" class="btn btn-outline">
+            <span class="icon">📥</span>
+            Export
+          </button>
+        </div>
+
+        <div class="file-input-group">
+          <input id="new-file-name" type="text" placeholder="New file name (e.g., style.css)" class="input">
+          <button id="add-file-btn" class="btn btn-outline">
+            <span class="icon">➕</span>
+            Add File
+          </button>
+        </div>
+      </div>
+
+      <!-- File tabs -->
+      <div class="file-tabs-container">
+        <div id="file-tabs" class="file-tabs"></div>
+      </div>
+
+      <!-- Error alert -->
+      <div id="error-alert" class="error-alert hidden">
+        <div id="error-message" class="error-message"></div>
+      </div>
+
+      <!-- Editor and Preview Grid -->
+      <div class="editor-preview-grid">
+        <!-- Editor Card -->
+        <div class="card editor-card">
+          <div class="card-header">
+            <div class="button-group">
+              <button id="undo-btn" class="btn btn-icon">
+                <span class="icon">↩️</span>
+              </button>
+              <button id="redo-btn" class="btn btn-icon">
+                <span class="icon">↪️</span>
+              </button>
+            </div>
+            <div id="last-saved" class="last-saved">Last saved: Never</div>
+          </div>
+          <textarea id="editor" class="editor-textarea" spellcheck="false"></textarea>
+        </div>
+
+        <!-- Preview Card -->
+        <div class="card preview-card" id="preview-card">
+          <div class="card-header">
+            <div class="preview-title">Preview</div>
+            <div class="button-group">
+              <button id="refresh-preview-btn" class="btn btn-icon" title="Refresh Preview">
+                <span class="icon">🔄</span>
+              </button>
+              <button id="fullscreen-btn" class="btn btn-outline">
+                Fullscreen
+              </button>
+            </div>
+          </div>
+          <div class="preview-container" id="preview-container">
+            <iframe id="preview-iframe" title="Preview" class="preview-iframe" sandbox="allow-scripts"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
