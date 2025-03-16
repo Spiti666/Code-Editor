@@ -1,3 +1,4 @@
+// Ändern der initialen Dateien, um alle drei Dateitypen von Anfang an zu haben
 // State management
 let files = [
   {
@@ -6,6 +7,22 @@ let files = [
     language: "html",
     content: getLanguageTemplate("index.html"),
     history: [getLanguageTemplate("index.html")],
+    historyIndex: 0,
+  },
+  {
+    id: 2,
+    name: "style.css",
+    language: "css",
+    content: getLanguageTemplate("style.css"),
+    history: [getLanguageTemplate("style.css")],
+    historyIndex: 0,
+  },
+  {
+    id: 3,
+    name: "script.js",
+    language: "javascript",
+    content: getLanguageTemplate("script.js"),
+    history: [getLanguageTemplate("script.js")],
     historyIndex: 0,
   },
 ]
